@@ -1,0 +1,32 @@
+.card {
+  list-style: none;
+  background-color: #1c1c1c;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 0.5rem;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  color: #fff;
+}

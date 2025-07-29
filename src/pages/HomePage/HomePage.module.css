@@ -1,0 +1,19 @@
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2rem;
+  color: #0d0d0e;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.message {
+  text-align: center;
+  color: #ccc;
+  font-style: italic;
+  margin-top: 2rem;
+}
