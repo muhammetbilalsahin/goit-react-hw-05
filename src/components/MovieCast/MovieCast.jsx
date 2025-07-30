@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { fetchMovieCast } from '../../services/api';
-import styles from './Cast.module.css'; 
+import styles from './MovieCast.module.css'; 
 
-function Cast() {
+function MovieCast() {
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
   const [error, setError] = useState(null);
@@ -14,7 +14,7 @@ function Cast() {
         const data = await fetchMovieCast(movieId);
         setCast(data);
       } catch {
-        setError('Oyuncular yüklenemedi.');
+        setError('Failed to load cast.');
       }
     }
 
@@ -22,7 +22,7 @@ function Cast() {
   }, [movieId]);
 
   if (error) return <p className={styles.error}>{error}</p>;
-  if (!cast.length) return <p className={styles.noData}>Oyuncu bilgisi bulunamadı.</p>;
+  if (!cast.length) return <p className={styles.noData}>No cast info avaliable.</p>;
 
   return (
     <ul className={styles.list}>
@@ -46,5 +46,4 @@ function Cast() {
     </ul>
   );
 }
-
-export default Cast;
+export default MovieCast;

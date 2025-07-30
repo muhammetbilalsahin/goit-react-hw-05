@@ -3,7 +3,17 @@
   margin: 0 auto;
   padding: 20px;
 }
-
+.back {
+  display: inline-block;
+  margin-bottom: 20px;
+  background-color: #161616;
+  text-decoration: none;
+  border: 2px solid;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: aliceblue;
+  font-size: small;
+}
 .details {
   display: flex;
   gap: 20px;
@@ -25,7 +35,6 @@
 
 .title {
   color: #232324;
-  margin-left: 500px;
   font-size: 2rem;
 }
 

@@ -1,7 +1,7 @@
 import { Outlet, NavLink } from "react-router-dom";
-import styles from "./Layout.module.css";
+import styles from "./Navigation.module.css";
 
-function Layout() {
+function Navigation() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -32,4 +32,4 @@ function Layout() {
   );
 }
 
-export default Layout;
+export default Navigation;

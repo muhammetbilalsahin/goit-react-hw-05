@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { fetchMovieReviews } from '../../services/api.js';
-import styles from './Reviews.module.css';
+import styles from './MovieReviews.module.css';
 
-function Reviews() {
+function MovieReviews() {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
   const [error, setError] = useState(null);
@@ -37,4 +37,4 @@ function Reviews() {
   );
 }
 
-export default Reviews;
+export default MovieReviews;
