@@ -11,21 +11,21 @@ const Reviews = lazy(() => import('./components/MovieReviews/MovieReviews.jsx'))
 
 function App() {
   return (
-    <BrowserRouter>
+    
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path="/" element={<Navigation/>}>
           <Route index element={<HomePage />} />
           <Route path="movies" element={<MoviesPage />} />
           <Route path="movies/:movieId" element={<MovieDetailsPage />}>
-            <Route path="cast" element={<Cast />} />
-            <Route path="reviews" element={<Reviews />} />
+            <Route path="cast" element={<MovieCast />} />
+            <Route path="reviews" element={<MovieReviews />} />
           </Route>
           <Route path="*" element={<p style={{  display:"flex", justifyContent:"center", fontSize:"55px"  }}>404 - Page not found</p>} />
         </Route>
       </Routes>
       </Suspense>
-    </BrowserRouter>
+   
   );
 }
 
@@ -34,4 +34,5 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
-import MovieReviews from './components/MovieReviews/MovieReviews.jsx';
+import MovieReviews from './components/MovieReviews/MovieReviews.jsx';import MovieCast from './components/MovieCast/MovieCast.jsx';
+

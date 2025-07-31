@@ -1,13 +1,12 @@
-import { useParams, Outlet, Link, useLocation } from 'react-router-dom';
+import { useParams, Outlet, NavLink, useLocation } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { fetchMovieDetails } from '../../services/api';
 import styles from './MovieDetailsPage.module.css';
 
 function MovieDetailsPage() {
   const { movieId } = useParams();
-  
-const location = useLocation;
-const backLinkHref = useRef(location.state?.from || "/")
+  const location = useLocation(); 
+  const backLinkHref = useRef(location.state?.from || '/');
   const [movie, setMovie] = useState(null);
   const [error, setError] = useState(null);
 
@@ -33,7 +32,7 @@ const backLinkHref = useRef(location.state?.from || "/")
 
   return (
     <div className={styles.container}>
-      <Link className={styles.back} to={backLinkHref.current}>Go Back</Link>
+      <NavLink className={styles.back} to={backLinkHref.current}>Go Back</NavLink>
       <h1 className={styles.title}>{movie.title}</h1>
 
       <div className={styles.details}>
@@ -57,11 +56,32 @@ const backLinkHref = useRef(location.state?.from || "/")
       </div>
 
       <hr className={styles.divider} />
-      <h2 className={styles.subtitle}>Additional İnformation</h2>
-      <ul className={styles.linkList}>
-        <li><Link className={styles.link} to="cast">Cast</Link></li>
-        <li><Link className={styles.link} to="reviews">Reviews</Link></li>
-      </ul>
+      <h2 className={styles.subtitle}>Additional Information</h2>
+      
+      <nav>
+        <ul className={styles.linkList}>
+          <li>
+            <NavLink
+              to="cast"
+              className={({ isActive }) =>
+                isActive ? styles.activeLink : styles.link
+              }
+            >
+              Cast
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="reviews"
+              className={({ isActive }) =>
+                isActive ? styles.activeLink : styles.link
+              }
+            >
+              Reviews
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
 
       <hr className={styles.divider} />
       <Outlet />
